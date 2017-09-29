@@ -43,7 +43,7 @@
 
 * 디버그모드 : 서버 실행 시 디버깅 정보 출력
 <pre><code>DEBUG=appname:* </code></pre>
-
+rr
 #### bash 단축명령어 등록법
 
 alias 단축명령어 = '원래 커맨드'
