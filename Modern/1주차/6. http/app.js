@@ -20,6 +20,8 @@ http.createServer(function (request, response) {
   console.log('Server Running at http://127.0.0.1:52273');
 });;
 
+
+
 // 페이지 강제 이동 : Location
 http.createServer(function (request, response) {
   response.writeHead(302, { 'Location' : 'http://www.hanbit.co.kr'});
@@ -27,6 +29,8 @@ http.createServer(function (request, response) {
 }).listen(52274, function() {
   console.log('Server Running at http://127.0.0.1:52274');
 });
+
+
 
 
 // url을 통한 페이지 구분
@@ -56,6 +60,8 @@ http.createServer(function (request, response) {
   console.log('Server Running at http://127.0.0.1:52275');
 });
 
+
+
 // Method 속성으로 page구분
 // var url = require('url');
 
@@ -69,6 +75,8 @@ http.createServer(function (request, response) {
 }).listen(52276, function() {
   console.log('Server Running at http://127.0.0.1:52276');
 });
+
+
 
 // Get 요청 추출
 http.createServer(function (request, response) {
@@ -90,6 +98,8 @@ http.createServer(function (request, response) {
     console.log('POST data', data)
   });
 }).listen(52278);
+
+
 
 // File에서 요청 구별하기
 // var fs = require('fs');
@@ -113,6 +123,8 @@ http.createServer(function(request, response) {
   console.log('Server Running at http://127.0.0.1:52279');
 });
 
+
+
 // 쿠키 추출
 http.createServer(function (request, response) {
   // get cookie
@@ -128,6 +140,8 @@ http.createServer(function (request, response) {
 }).listen(52280, function () {
   console.log('Server Running at http://127.0.0.1:52280');
 });
+
+
 
 // 쿠키 분해
 http.createServer(function (request, response){
