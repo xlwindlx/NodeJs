@@ -88,19 +88,19 @@ INSERT INTO products (name, modelnumber, series) VALUES ('Eric Clapton Stratocas
 
 ### 데이터 조회
 <code>SELECT col명 FROM 테이블명</code>   
-ex)<code>SELECT * FROM products;</code>    
+ex) <code>SELECT * FROM products;</code>    
 
 ![select](select_workbench.jpg)
 
 ### 조건 검사
 <code>select col명 FROM 테이블명 WHERE 조건</code>   
-ex)<code>select * from products where series='Artist'</code>   
+ex) <code>select * from products where series='Artist'</code>   
 
 ![where](where.jpg)
 
 ### 데이터 정렬
 <code>SELECT * from 테이블명 **ORDER BY*** col명</code>   
-ex)<code>SELECT id, name, series FROM products ORDER BY name;</code>    
+ex) <code>SELECT id, name, series FROM products ORDER BY name;</code>    
 
 ![order](order.jpg)
 
@@ -117,7 +117,7 @@ ex) <code>UPDATE products SET name='American Deluxe Telecaster' WHERE id =4;</co
 
 ### 데이터 삭제
 <code>DELETE FROM products WHERE 삭제할row명</code>   
-ex)<code>DELETE FROM products WHERE id=10;</code>   
+ex) <code>DELETE FROM products WHERE id=10;</code>   
 > **조건문으로 row를 설정하지 않으면 모든 데이터가 삭제되므로 주의**
 
 #### table 삭제
