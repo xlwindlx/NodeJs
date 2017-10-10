@@ -10,6 +10,8 @@
 cmd에서 mysql server 설치 폴더로 이동 후    
 <code>mysql -uroot -p</code> 입력 후 비밀번호 입력   
 
+![mysql접속](mysqlconnect.jpg)
+
 ### 우분투 설치
 설치    
 <code>sudo apt-get install mysql-server mysql-client</code>   
@@ -28,8 +30,9 @@ cmd에서 mysql server 설치 폴더로 이동 후
 ## 2. 기본 명령어
 **Database의 범위**    
 
-| 도서관 | Database |
+| 범위 | MySQL |
 |:-----:|:-------:|
+| 도서관 | Database |
 | 책 | table |
 | 정보 | data |
 
@@ -37,14 +40,14 @@ cmd에서 mysql server 설치 폴더로 이동 후
 
 ### DB 생성
 <code>CREATE DATABASE DB이름</code>   
-ex)
-<code>CREATE DATABASE O2</code>   
+ex) <code>CREATE DATABASE O2</code>   
 
 전체 DB 보기    
 <code>SHOW DATABASES</code>   
 
 DB 선택   
-<code>use O2</code>   
+<code>USE DB이름</code>   
+ex) <code>use O2</code>   
 
 ### table 생성
 <code>CREATE TABLE table이름 (col과 속성 값)</code>   
@@ -66,9 +69,7 @@ CREATE TABLE products (
 | AUTO_INCREMENT | 자동 증가 |
 | PRIMARY KEY | 기본 값으로 설정  |
 ...   
-
-workbench에서 보여주기
-
+![속성들](col_list.jpg)    
 
 **table의 정보 확인**    
 <code>DESCRIBE table이름</code>   
