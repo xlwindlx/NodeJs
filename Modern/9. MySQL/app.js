@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var client = mysql.createConnection({
   user:'root',
   password:'ajyabr2368',
-  database:'o2'
+  database:'company'
 });
 
 // 서버 생성
@@ -36,7 +36,7 @@ app.get('/', function(request, response) {
   });
 });
 
-
+// Delete
 app.get('/delete/:id', function(request, response) {
   // DB query 실행
   client.query('DELETE FROM products WHERE id = ?', [request.params.id], function() {
@@ -45,6 +45,7 @@ app.get('/delete/:id', function(request, response) {
   });
 });
 
+// Create
 app.get('/insert', function(request, response) {
   // read file
   fs.readFile('insert.html', 'utf8', function(error, data) {
@@ -52,7 +53,7 @@ app.get('/insert', function(request, response) {
     response.send(data);
   });
 });
-
+// Create
 app.post('/insert', function(request, response) {
   // 변수 선언
   var body = request.body;
@@ -64,7 +65,7 @@ app.post('/insert', function(request, response) {
   });
 });
 
-
+// Update
 app.get('/edit/:id', function(request, response) {
   // 파일 읽기
   fs.readFile('edit.html', 'utf8', function(error, data) {
@@ -75,7 +76,7 @@ app.get('/edit/:id', function(request, response) {
     });
   });
 });
-
+// Update
 app.post('/edit/:id', function(request, response) {
   // 변수 선언
   var body = request.body;

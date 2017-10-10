@@ -61,6 +61,8 @@ CREATE TABLE products (
 );
 ```
 
+![create](create_table.jpg)
+
 ** 각 column의 속성 값 **    
 
 | 속성 | 설명 |
@@ -68,17 +70,17 @@ CREATE TABLE products (
 | NOT NULL | 빈칸 불가 |
 | AUTO_INCREMENT | 자동 증가 |
 | PRIMARY KEY | 기본 값으로 설정  |
+
 ...   
+
 ![속성들](col_list.jpg)    
 
 **table의 정보 확인**    
 <code>DESCRIBE table이름</code>   
 ex)<code>DESC products;</code>
 
-![create](create_table.jpg)
-
 ### 데이터 저장(삽입)
-<code>INSERT into 테이블명 (col1, col2) VALUE (col1의 데이터, col2의 데이터)    
+<code>INSERT into 테이블명 (col1, col2) VALUE (col1의 데이터, col2의 데이터)</code>    
 ex)   
 ```
 INSERT INTO products (name, modelnumber, series) VALUES ('Eric Clapton Stratocaster', '0117602386', 'Artist');
@@ -88,7 +90,7 @@ INSERT INTO products (name, modelnumber, series) VALUES ('Eric Clapton Stratocas
 
 ### 데이터 조회
 <code>SELECT col명 FROM 테이블명</code>   
-ex) <code>SELECT * FROM products;</code>    
+ex)<code>SELECT * FROM products;</code>    
 
 ![select](select_workbench.jpg)
 
@@ -98,14 +100,28 @@ ex) <code>select * from products where series='Artist'</code>
 
 ![where](where.jpg)
 
+#### 기본적인 MySQL 연산자
+
+| 연산자 | 설명 |
+|:------:|:----:|
+| = | 좌우변이 같다. |
+| != or <> | 좌우변이 다르다. |
+| < | 우변이 크다. |
+| > | 좌변이 크다. |
+| <= | 우변이 좌변보다 크거나 같다. |
+| >= | 좌변이 우변보다 크거나 같다. |
+| OR | 논리합 |
+| AND | 논리곱 |
+
+
 ### 데이터 정렬
 <code>SELECT * from 테이블명 **ORDER BY*** col명</code>   
 ex) <code>SELECT id, name, series FROM products ORDER BY name;</code>    
 
-![order](order.jpg)
+![order](order.jpg)   
 
 ### 특정 위치에 있는 데이터 선택
-<code>SELECT * FROM 테이블명 **LIMIT 2***;</code>
+<code>SELECT * FROM 테이블명 **LIMIT 2***;</code>   
 ex) <code>SELECT * FROM products LIMIT 2;</code>    
 
 ![limit](limit.jpg)
@@ -113,6 +129,7 @@ ex) <code>SELECT * FROM products LIMIT 2;</code>
 ### 데이터 수정
 <code>UPDATE 테이블명 SET col명=값 WHERE 변경할row</code>    
 ex) <code>UPDATE products SET name='American Deluxe Telecaster' WHERE id =4;</code>   
+
 ![update](update.jpg)
 
 ### 데이터 삭제
