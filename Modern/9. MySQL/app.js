@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var client = mysql.createConnection({
   user:'root',
   password:'ajyabr2368',
-  database:'company'
+  database:'o2'
 });
 
 // 서버 생성

@@ -215,15 +215,78 @@ function(error, data, fields) {
 
 
 ### 데이터 표시
-[list](list.html)   
+```
+<!DOCTYPE html>
+<html>
+<head>
+  <title>list</title>
+</head>
+<body>
+  <h1>List Page</h1>
+  <a href = '/insert'>INSERT DATA</a>
+  <hr>
+  <table width="100%" border="1">
+    <thead>
+      <td>DELETE</td>
+      <td>EDIT</td>
+      <td>ID</td>
+      <td>Name</td>
+      <td>Model Number</td>
+      <td>Series</td>
+    </thead>
+    <% data.forEach(function (item, index) { %>
+    <tr>
+      <td><a href="/delete/<%= item.id %>">DELETE</a></td>
+      <td><a href="/edit/<%= item.id %>">EDIT</a></td>
+      <td><%= item.id %></td>
+      <td><%= item.name %></td>
+      <td><%= item.modelnumber %></td>
+      <td><%= item.series %></td>
+    </tr>
+    <% }); %>
+  </table>
+</body>
+</html>
+```
 ### 데이터 삭제
 
 ### 데이터 추가
-[insert](insert.html)   
+```
+<!DOCTYPE html>
+<html>
+<head>
+  <title>insert</title>
+</head>
+<body>
+  <h1>Insert Page</h1>
+  <hr>
+  <form method="post">
+    <fieldset>
+      <legend>INSERT DATA</legend>
+      <table>
+        <tr>
+          <td><label>Name</label></td>
+          <td><input type="text" name="name"></td>
+        </tr>
+        <tr>
+          <td><label>Model Number</label></td>
+          <td><input type="text" name="modelnumber"></td>
+        </tr>
+        <tr>
+          <td><label>Series</label></td>
+          <td><input type="text" name="series"></td>
+        </tr>
+      </table>
+      <input type="submit">
+    </fieldset>
+  </form>
+</body>
+</html>
+
+```
 ### 데이터 수정
 
 ### **전체코드**
-[app.js](app.js)    
-[list](list.html)   
-[insert](insert.html)   
-[edit](edit.html)
+```
+
+```
