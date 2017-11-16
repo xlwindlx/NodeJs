@@ -19,7 +19,7 @@
   * --force : 강제로 진행
 
 
-7. 추가적인 npm
+3. 추가적인 npm
 --
 
 * passport : 인증절차에 쓰이는 middleware
@@ -49,7 +49,7 @@ rr
 alias 단축명령어 = '원래 커맨드'
 <pre><code>alias de = 'DEBUG=blueprint_1th:* npm start'</code></pre>    
 
-![alias](/alias.jpg)
+![alias](alias.jpg)
 
 ### package.json 수동 설치
 command로 설치한게 아닌 package.json에 적었을 때
@@ -69,4 +69,16 @@ command로 설치한게 아닌 package.json에 적었을 때
 #### windows
 [다운로드](https://www.mongodb.com/download-center#enterprise)    
 설치 : 그냥 쭈~욱 하기    
-서버 셋팅 하기 : ㅠㅠ......   
+서버 셋팅 하기    
+  1. mongodb의 기본 dir 생성   
+     <code>mkdir c:\data\db</code>    
+  2. 몽고DB 프로젝트 폴더로 이동 후 mongod.exe 실행
+     <code>cd C:\Program files\mongodb\server\3.4\bin\mongod.exe</code>
+  3. 로그 확인    
+
+### ** 실행 중 에러 **   
+* sass revision   
+  npm rebuild node-sass   
+
+* express-session 버전에 따른 문법 change    
+  <code>app.use(cookieParser())</code> => <code>app.use(cookieParser('some secret text'))</code>
