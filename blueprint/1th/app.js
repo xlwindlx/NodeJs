@@ -39,6 +39,7 @@ app.use(favicon(path.join(__dirname, 'public/images', 'favicon.jpg')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+// 문법 바뀜, text 넣어 줘야함
 app.use(cookieParser('some secret text'));
 app.use(sassMiddleware({
   src: path.join(__dirname, 'public'),

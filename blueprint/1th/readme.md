@@ -43,7 +43,7 @@
 
 * 디버그모드 : 서버 실행 시 디버깅 정보 출력
 <pre><code>DEBUG=appname:* </code></pre>
-rr
+
 #### bash 단축명령어 등록법
 
 alias 단축명령어 = '원래 커맨드'
@@ -78,7 +78,33 @@ command로 설치한게 아닌 package.json에 적었을 때
 
 ### ** 실행 중 에러 **   
 * sass revision   
-  npm rebuild node-sass   
+  node버전과 sass버전 호환성 문제   
+  sass최신 버전은 node 7.x버전까지만 사용 가능하다.   
+  <code>npm rebuild node-sass</code>   
 
 * express-session 버전에 따른 문법 change    
-  <code>app.use(cookieParser())</code> => <code>app.use(cookieParser('some secret text'))</code>
+  <code>app.use(cookieParser())</code>    
+  <code>app.use(cookieParser('some secret text'))</code>    
+
+### 구성도   
+기본적으로 MVC 패턴과 Server쪽만 구성이 되어 있다.   
+
+따라서 Server 폴더에 Model View Controller 이 3가지 폴더와 routes를 구성하는 routes, 그리고 express의 기본 구성 및 module을 설정하는 config폴더로 이루어져 있다.    
+
+  1. config/passport.js : passport-local을 이용하여 로그인 구현    
+     apps.js : 모듈 호출   
+     model/user.js : 비밀번호 확인    
+     routes/index.js : 각 페이지 설정   
+     [참조](https://www.zerocho.com/category/NodeJS/post/57b7101ecfbef617003bf457)    
+
+  2. Controller/comments.js   
+     댓글만 구현하므로 Controller파일이 하나이다.    
+     중간에 render로 direction시키는 부분에서 설정된 문법을 view페이지에서 사용한다.    
+
+  3. Model  
+     로그인할 유저 & 댓글이 comments 모델 2가지를 구현    
+     NoSQL인 mongodb 형식대로 JSON Type이며 User모델에서는 bcrypt를 사용하여 비밀번호를 암호화한다.    
+
+  4. routes/users.js : user 리스트를 보여줌    
+     routes/comments.js : view에서 입력받은 양식들을 model에 넘겨주는 역할 및 설정   
+     routes/index.js : app.js와 같은 역할 (about comment CRUD)   
