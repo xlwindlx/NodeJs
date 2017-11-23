@@ -4,15 +4,24 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
-var index = require('./routes/index');
-var users = require('./routes/users');
+var swig = require('swig');
+// var index = require('./routes/index');
+// var users = require('./routes/users');
 
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('views', path.join(__dirname, 'views/pages'));
+var swig = new swig.Swig();
+app.engine('html',swig.renderFile);
+app.set('view engine', 'html');
+
+// index 컨트롤러 삽입
+var index = require('./controllers/index');
+// Band 컨트롤러 삽입
+var bands = require('./controllers/band');
+// User 컨트롤러 삽입
+var users = require('./controllers/user');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -22,8 +31,20 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/users', users);
+app.use('/', index.show);
+// Band 목록과 생성에 대한 routes 정의
+app.get('/bands', bands.list);
+// id로 Band 얻기
+app.get('/band/:id', bands.byId);
+// band 생성
+app.post('/bands', bands.create);
+// 수정
+app.put('/band/:id', bands.update);
+// id로 삭제
+app.delete('/band/:id', bands.delete);
+// user목록과 생성에 대한 routes 정의
+app.get('/users', users.list);
+app.post('/users', users.create);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
