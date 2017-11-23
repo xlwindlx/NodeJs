@@ -1,0 +1,30 @@
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# jscoverage/JSCover lib-cov으로 생성한 instrumented lib을 위한 dir
+lib-cov
+
+# 이스탄불 커버리지 같은 툴이 사용하는 커버리지 dir
+coverage
+
+# 그런트 중간 저장소 (http://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+
+# node-waf 설정
+.lock-wscript
+
+# 컴파일된 바이너리 애드온 (http://nodejs.org/api/addons.html)
+build/Release
+
+# Dependency directory
+# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git-
+node_modules
+
+# Debug log from npm
+npm-debug.log
