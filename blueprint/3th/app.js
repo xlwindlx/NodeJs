@@ -13,7 +13,7 @@ var upload = multer({ dest:'./public/uploads', limits:{filesize:1000000, files:1
 // 홈 컨트롤러 불러오기
 var index = require('./server/controllers/index');
 // 로그인 컨트롤러 불러오기
-var auth = requrie('./server/controllers/auth');
+var auth = require('./server/controllers/auth');
 // 코멘트 컨트롤러 불러오기
 var comments = require('./server/controllers/comments');
 // 비디오 컨트롤러 불러오기
