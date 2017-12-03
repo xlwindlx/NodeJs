@@ -59,19 +59,20 @@ command로 설치한게 아닌 package.json에 적었을 때
 [공식홈페이지](https://docs.mongodb.com/manual/administration/install-enterprise/)
 
 #### Linux
-서버 : sudo apt-get install mongodb-server  
-클라이언트 : sudo apt-get install mongodb-client
+서버 : sudo apt-get install mongodb-org  
 
-시작 : sudo service mongodb start   
-종료 : sudo service mongodb stop    
-재시작 : sudo service mongodb restart    
+시작 : sudo service mongod start   
+종료 : sudo service mongod stop    
+재시작 : sudo service mongod restart    
 
 #### windows
 [다운로드](https://www.mongodb.com/download-center#enterprise)    
 설치 : 그냥 쭈~욱 하기    
 서버 셋팅 하기    
   1. mongodb의 기본 dir 생성   
-     <code>mkdir c:\data\db</code>    
+     <code>mkdir c:\data\db</code>   
+     * default 폴더 바꾸기   
+     <code>"C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe" --dbpath "원하는 위치"</code>   
   2. 몽고DB 프로젝트 폴더로 이동 후 mongod.exe 실행
      <code>cd C:\Program files\mongodb\server\3.4\bin\mongod.exe</code>
   3. 로그 확인    
