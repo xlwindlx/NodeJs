@@ -1,12 +1,12 @@
 1. 기본 package 설치
-  --
+  
   <pre><code>npm install -g yo express express-generator</code></pre>
 
 * npm yo : node뿐만이 아니라 web framework들의 scaffold틀을 만들어주는 npm
 
 
 2. 프로젝트 생성
-  --  
+  
 * express -option project_name
 
 <pre><code>express --ejs --css sass --git blueprint_1th</code></pre>
@@ -20,7 +20,7 @@
 
 
 3. 추가적인 npm
-  --
+  
 
 * passport : 인증절차에 쓰이는 middleware
 * gravatar : 랜덤이미지 표시
