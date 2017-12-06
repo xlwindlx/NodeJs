@@ -96,7 +96,8 @@ command로 설치한게 아닌 package.json에 적었을 때
      apps.js : 모듈 호출   
      model/user.js : 비밀번호 확인    
      routes/index.js : 각 페이지 설정   
-     [참조](https://www.zerocho.com/category/NodeJS/post/57b7101ecfbef617003bf457)    
+
+   [PassPort로 회원가입하기](https://www.zerocho.com/category/NodeJS/post/57b7101ecfbef617003bf457)    
 
     2. Controller/comments.js   
      댓글만 구현하므로 Controller파일이 하나이다.    

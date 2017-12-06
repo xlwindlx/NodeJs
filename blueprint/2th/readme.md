@@ -16,7 +16,7 @@
 ### Swig Template
 
 JS Template 엔진으로 Django, Jinja2, and Twig 등에서 사용할 수 있다.
-
+> 참조    
 [Docs](http://node-swig.github.io/swig-templates/docs/)   
 [Github](https://github.com/paularmstrong/swig)   
 
@@ -37,9 +37,9 @@ Promise를 구현한 라이브러리에는 대표적으로 Q, RSVP, bluebird가 
   <pre><code>npm install sequelize</code></pre>
   >MySQL을 기본적으로 포함하지 않고 있으므로 따로 설치해주어야한다.
   <pre><code>npm install mysql2</code></pre>
-
+  > 참조    
   [Docs](http://docs.sequelizejs.com/)    
-  [참조](http://webframeworks.kr/tutorials/expressjs/expressjs_orm_one/)    
+  [ExpressJS에서 ORM인 Sequelize 사용하기](http://webframeworks.kr/tutorials/expressjs/expressjs_orm_one/)    
 
 
 ### ODM(Mongoose) vs ORM(Sequelize)
@@ -57,7 +57,7 @@ Object Relational Mapping으로 App과 DB를 Mapping시켜주는 도구이다.
   RAW query에 비해 performance가 느리다.
   Query tuning이 힘들다.
   서비스가 복잡해 질수록 ORM으로 할 수 있는 작업의 범위에 한계가 있다.
-
+    > 참조    
     [Wiki](https://ko.wikipedia.org/wiki/%EA%B0%9D%EC%B2%B4_%EA%B4%80%EA%B3%84_%EB%A7%A4%ED%95%91)
 
 
@@ -67,7 +67,7 @@ JSONB는 MongoDB에서 사용하는 JSON 표기법 문서를 이진으로 저장
 mongoose는 자바의 JPA/Hibernate/Mybatis와 같은 OR Mapper와 같은 개념입니다.    
 또한 객체 표기법을 Document 표기법으로 변환하기 위해 JSON 또는 JSONB API를 사용합니다.    
 ORM은 객체 지향 프로그래밍 언어를 사용하여 호환되지 않는 유형 시스템간에 데이터를 변환하는 프로그래밍 기술입니다.    
-    
+    > 참조    
     [ODM vs ORM](http://www.polarglow.com/tag/odm-%EA%B3%BC-orm-%EC%B0%A8%EC%9D%B4/)    
     [StackOverFlow](https://stackoverflow.com/questions/12261866/what-is-the-difference-between-an-orm-and-an-odm)
 
