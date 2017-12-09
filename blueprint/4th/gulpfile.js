@@ -2,7 +2,7 @@ const gulp = require('gulp');
 const nodemon = require('gulp-nodemon');
 const plumber = require('gulp-plumber');
 const livereload = require('gulp-livereload');
-
+const watch = require('gulp-watch');
 
 gulp.task('develop', () => {
   livereload.listen();
@@ -24,3 +24,11 @@ gulp.task('develop', () => {
 gulp.task('default', [
   'develop'
 ]);
+
+gulp.task('watch', function() {
+  livereload.listen();
+  gulp.watch('*', ['check']);
+  gulp.watch('js/*', ['check']);
+  gulp.watch('css/*', ['check']);
+  gulp.watch('html/*', ['check']);
+});
