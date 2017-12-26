@@ -16,7 +16,6 @@ router.get('/locations', function (req, res, next) {
       lat: -23.54312,
       long: -46.642748
     });
-
     //res.status(200).json(stores);
   });
 });
@@ -54,19 +53,19 @@ router.post('/locations', function (req, res, next) {
 
 router.post('/nearme', function (req, res, next) {
 
-  // Setup limit
+  // 최대 표시 갯수
   var limit = req.body.limit || 10;
 
-  // Default max distance to 10 kilometers
+  // 기본 최장 거리는 10km
   var maxDistance = req.body.distance || 10;
 
   // Setup coords Object = [ <longitude> , <latitude> ]
   var coords = [];
-  // Create the array
+  // 배열 생성
   coords[0] = req.body.longitude;
   coords[1] = req.body.latitude;
 
-  // find a location
+  // 위치 검색
   Location.find({
     'coordinates': {
       $near: {
@@ -74,7 +73,7 @@ router.post('/nearme', function (req, res, next) {
           type: "Point",
           coordinates: coords
         },
-        // distance to radians
+        // 반지름
         $maxDistance: maxDistance * 1609.34, spherical: true
       }
     }

@@ -1,17 +1,17 @@
-const express = require('express');
-const router = express.Router();
-const mongoose = require('mongoose');
-const Article = mongoose.model('Article');
+var express = require('express'),
+  router = express.Router(),
+  mongoose = require('mongoose'),
+  Article = mongoose.model('Article');
 
-module.exports = (app) => {
+module.exports = function (app) {
   app.use('/', router);
 };
 
-router.get('/', (req, res, next) => {
-  Article.find((err, articles) => {
+router.get('/', function (req, res, next) {
+  Article.find(function (err, articles) {
     if (err) return next(err);
     res.render('index', {
-      title: 'Generator-Express MVC',
+      title: 'Map',
       articles: articles
     });
   });

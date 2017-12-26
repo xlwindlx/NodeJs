@@ -1,5 +1,3 @@
-
-
 const express = require('express');
 const config = require('./config/config');
 const glob = require('glob');
@@ -17,9 +15,9 @@ models.forEach(function (model) {
 });
 const app = express();
 
-module.exports = require('./config/express')(app, config);
+// module.exports =
+require('./config/express')(app, config);
 
 app.listen(config.port, () => {
   console.log('Express server listening on port ' + config.port);
 });
-

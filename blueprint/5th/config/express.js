@@ -65,5 +65,5 @@ module.exports = (app, config) => {
     });
   });
 
-  return app;
+  // return app;
 };
