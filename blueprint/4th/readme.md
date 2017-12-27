@@ -38,10 +38,3 @@ Web FrontEnd 전용 패키지 매니저로 Twitter에서 개발되어 그 하단
 
 > 참조        
 [두 모듈의 차이점?](https://stackoverflow.com/questions/41311348/express-or-express-generator-do-i-need-both)
-
-
-## Mongoose를 이용한 code refactoring
-
-### cloudinary 제거
-
-### jugglingdb to Mongoose

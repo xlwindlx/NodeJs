@@ -7,6 +7,7 @@ module.exports = function (app) {
   app.use('/', router);
 };
 
+// 기본 지도 표시 위치
 router.get('/locations', function (req, res, next) {
   Location.find(function (err, item) {
     if (err) return next(err);
@@ -16,6 +17,7 @@ router.get('/locations', function (req, res, next) {
       lat: -23.54312,
       long: -46.642748
     });
+    // stores 페이지
     //res.status(200).json(stores);
   });
 });

@@ -2,7 +2,7 @@
 
 var mongoose = require('mongoose'),
   Schema = mongoose.Schema;
-
+// type을 왜 명시하는지??
 var StoreSchema = new Schema({
     distance: Number,
     store: {

@@ -53,9 +53,10 @@
   </div>
 </div>
 
+<!-- 저장된 위치 표시를 위한 Script -->
 <script type="text/javascript">
   var loadMap = function() {
-    // Center map with current lat and long (Simulated with fixed point for this example)
+    // 현재 위도와 경도 표시 (Simulated with fixed point for this example)
     var googlePos = new google.maps.LatLng({{ lat }} , {{ long }});
     // Setup map options
     var mapOptions = {
@@ -64,13 +65,13 @@
       mapTypeId : google.maps.MapTypeId.ROADMAP
     };
 
-    // Set a variable to get the HTML div
+    // HTML div를 얻기 위한 변수
     var mapObj = document.getElementById('map');
     var googleMap = new google.maps.Map(mapObj, mapOptions);
-    // Create markers array to hold all markers on map
+    // 모든 makrers를 표시하기 위한 배열
     var markers = [];
 
-    // Using the Swig loop to get all data from location variable
+    // Swig 반복문으로 모든 위치 표시
 
     {% for item in location %}
       // Setup a lat long object

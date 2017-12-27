@@ -3,6 +3,7 @@ const rootPath = path.normalize(__dirname + '/..');
 const env = process.env.NODE_ENV || 'development';
 
 const config = {
+  // 개발 환경
   development: {
     root: rootPath,
     app: {
@@ -12,6 +13,7 @@ const config = {
     db: 'mongodb://localhost/5th-development'
   },
 
+  // test환경
   test: {
     root: rootPath,
     app: {
@@ -21,6 +23,7 @@ const config = {
     db: 'mongodb://localhost/5th-test'
   },
 
+  // 배포 환경
   production: {
     root: rootPath,
     app: {

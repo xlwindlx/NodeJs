@@ -39,12 +39,14 @@ module.exports = (app, config) => {
     require(controller)(app);
   });
 
+  // error 페이지 render
   app.use((req, res, next) => {
     var err = new Error('Not Found');
     err.status = 404;
     next(err);
   });
 
+  // 개발환경에서 error페이지 render
   if (app.get('env') === 'development') {
     app.use((err, req, res, next) => {
       res.status(err.status || 500);

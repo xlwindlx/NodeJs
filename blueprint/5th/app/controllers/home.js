@@ -3,12 +3,13 @@ var express = require('express'),
   mongoose = require('mongoose'),
   Article = mongoose.model('Article');
 
-module.exports = function (app) {
+module.exports = (app) => {
   app.use('/', router);
 };
 
-router.get('/', function (req, res, next) {
-  Article.find(function (err, articles) {
+// 위치
+router.get('/', (req, res, next) => {
+  Article.find((err, articles) => {
     if (err) return next(err);
     res.render('index', {
       title: 'Map',
