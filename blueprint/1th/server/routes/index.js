@@ -1,8 +1,6 @@
 var express = require('express');
 var router = express.Router();
-// 비밀번호 처리를 위한 passport모듈
 var passport = require('passport');
-// email에서 gravatar 아이콘 추출
 var gravatar = require('gravatar');
 
 /* GET home page. */
@@ -33,6 +31,11 @@ router.post('/signup', passport.authenticate('local-signup', {
   failureRedirect : '/signup',
   failureFlash : true
 }));
+
+/* GET Profile page. */
+router.get('/profile', isLoggedIn, function(req, res, next) {
+  res.render('profile', { title: 'Profile Page', user : req.user, avatar: gravatar.url(req.user.email ,  {s: '100', r: 'x', d: 'retro'}, true) });
+});
 
 /* GET Profile page. */
 router.get('/profile', isLoggedIn, function(req, res, next) {

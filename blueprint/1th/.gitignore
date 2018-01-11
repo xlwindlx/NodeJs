@@ -28,28 +28,3 @@ node_modules
 
 # Debug log from npm
 npm-debug.log
-
-*.msi
-*.obj
-*.exe
-*.pdb
-*.user
-*.aps
-*.pch
-*.vspscc
-*_i.c
-*_p.c
-*.ncb
-*.suo
-*.tlb
-*.tlh
-*.bak
-*.cache
-*.ilk
-*.log
-*.dll
-*.lib
-*.sbr
-*.pptx
-*.ppt
-*.pdf
